@@ -5,6 +5,7 @@ If an invalid subreddit is given, the function returns 0.
 """
 
 import requests
+import sys
 
 def number_of_subscribers(subreddit):
     """
@@ -25,5 +26,5 @@ def number_of_subscribers(subreddit):
         return 0
 
 if __name__ == "__main__":
-    print(number_of_subscribers("Python"))
+    print(number_of_subscribers(sys.argv[1]))
 
