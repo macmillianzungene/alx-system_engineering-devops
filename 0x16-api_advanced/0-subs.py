@@ -8,20 +8,15 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """Returns the number of subscribers for a given subreddit"""
+    """returns the number of subscribers"""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {'User-Agent': 'Custom-User-Agent'}
-
-    try:
-        response = requests.get(url, headers=headers)
-
-        if response.status_code == 200:
-            data = response.json()
-            subscribers = data['data']['subscribers']
-
-            return subscribers
-        else:
-            return 0
-    except Exception as e:
-        print(f"Error: {e}")
+    headers = {
+        "User-Agent": "My user agent 1.0"
+    }
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    if response.status_code == 200:
+        data = response.json().get('data', {})
+        sub = data.get('subscribers', 0)
+        return sub
+    else:
         return 0
