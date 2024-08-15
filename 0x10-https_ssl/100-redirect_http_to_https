@@ -47,5 +47,5 @@ frontend macmilliansolutions-frontend-https
 
 backend macmilliansolutions-backend
         balance roundrobin
-        server 464372-web-01 34.204.76.2:80 check
-        server 464372-web-02 34.207.211.35:80 check
+        server 464372-web-01 18.235.234.103:80 check
+        server 464372-web-02 34.224.95.203:80 check
